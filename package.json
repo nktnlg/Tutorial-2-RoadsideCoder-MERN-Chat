@@ -14,6 +14,10 @@
   ],
   "author": "nktnlg",
   "license": "ISC",
+  "engines": {
+    "node": "14.15.0",
+    "npm": "6.14.8"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
