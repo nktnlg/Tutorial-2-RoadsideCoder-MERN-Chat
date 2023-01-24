@@ -8,8 +8,6 @@ import UpdateGroupChatModal from "./Misc/UpdateGroupChatModal";
 import axios from "axios";
 import './styles.css'
 import ScrollableChat from "./ScrollableChat";
-import Lottie from "react-lottie";
-import animationData from "../animations/typing2.json";
 
 import io from "socket.io-client";
 const ENDPOINT = process.env.ENDPOINT;
@@ -26,15 +24,6 @@ const SingleChat = ({fetchAgain, setFetchAgain}) => {
 
     const {user, selectedChat, setSelectedChat, bell, setBell} = ChatState();
     const toast = useToast();
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
 
 
     const fetchMessages = async () => {
@@ -220,11 +209,10 @@ const SingleChat = ({fetchAgain, setFetchAgain}) => {
                             >
                                 {isTyping ?
                                     (<div>
-                                        <Lottie
-                                            options={defaultOptions}
+                                        <p
                                             width={70}
                                             style={{marginBottom: 15, marginLeft: 0}}
-                                        />
+                                        >writing</p>
                                     </div>) :
                                     (<></>)}
                                 <Input
